@@ -1,36 +1,9 @@
-# name: Deploy
-#
-# on:
-#   push:
-#     branches:
-#       - main
-#
-# jobs:
-#   deploy:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - uses: actions/checkout@v2
-#       # Setup key
-#       - run: set -eu
-#       - run: mkdir "$HOME/.ssh"
-#       - run: echo "${{ secrets.app }}" > "$HOME/.ssh/app"
-#       - run: chmod 600 "$HOME/.ssh/app"
-#       # Build
-#       # - run: yarn install
-#       # - run: yarn build
-#       # Deploy
-#       # cd dist &&
-#       - run: rsync -e "ssh -p 20022 -i $HOME/.ssh/app -o StrictHostKeyChecking=no" --archive --compress --delete . gc485015_admin@gc485015.ftp.tools:/home/gc485015/artem.monster/app-test/
-#
-#
-# # m71516@hostru04.fornex.org:/home/m71516/public_html/wp.maxgraph.ru
-
 name: SSH deploy on push
 
 on:
   push:
     branches:
-      - main  # або замість 'main' вкажіть назву вашої головної гілки
+      - main
 
 jobs:
   build:
