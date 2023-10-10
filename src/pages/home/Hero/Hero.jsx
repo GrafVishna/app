@@ -35,7 +35,7 @@ const Hero = () => {
                             <Star/>
                             <Star/>
                         </div>
-                        <Label content="Test Deploy"/>
+                        <Label content={data.label}/>
                         <HeroTitle content={data.title}/>
                         <Subtitle content={data.subtitle}/>
                         <ButtonBorder text={data.button_text} type={data.button_type}/>
