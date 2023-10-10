@@ -1,26 +1,49 @@
-name: Deploy
+# name: Deploy
+#
+# on:
+#   push:
+#     branches:
+#       - main
+#
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v2
+#       # Setup key
+#       - run: set -eu
+#       - run: mkdir "$HOME/.ssh"
+#       - run: echo "${{ secrets.app }}" > "$HOME/.ssh/app"
+#       - run: chmod 600 "$HOME/.ssh/app"
+#       # Build
+#       # - run: yarn install
+#       # - run: yarn build
+#       # Deploy
+#       # cd dist &&
+#       - run: rsync -e "ssh -p 20022 -i $HOME/.ssh/app -o StrictHostKeyChecking=no" --archive --compress --delete . gc485015_admin@gc485015.ftp.tools:/home/gc485015/artem.monster/app-test/
+#
+#
+# # m71516@hostru04.fornex.org:/home/m71516/public_html/wp.maxgraph.ru
 
-on:
-  push:
-    branches:
-      - main
-
+name: SSH deploy on push
+on: push
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      # Setup key
-      - run: set -eu
-      - run: mkdir "$HOME/.ssh"
-      - run: echo "${{ secrets.app }}" > "$HOME/.ssh/app"
-      - run: chmod 600 "$HOME/.ssh/app"
-      # Build
-      # - run: yarn install
-      # - run: yarn build
-      # Deploy
-      # cd dist &&
-      - run: rsync -e "ssh -p 20022 -i $HOME/.ssh/app -o StrictHostKeyChecking=no" --archive --compress --delete . gc485015_admin@gc485015.ftp.tools:/home/gc485015/artem.monster/app-test/
+      - uses: actions/checkout@v3
+      - name: rsync deploy
+        uses: burnett01/rsync-deployments@5.2.1
+        with:
+          switches: -avzr --delete
+          path: .
+          remote_host: ${{ secrets.REMOTE_HOST }}
+          remote_user: ${{ secrets.REMOTE_USER }}
+          remote_key: ${{ secrets.REMOTE_KEY }}
+          remote_path: ${{ secrets.REMOTE_PATH }}
 
 
-# m71516@hostru04.fornex.org:/home/m71516/public_html/wp.maxgraph.ru
+
+
+
+
