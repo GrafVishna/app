@@ -36,6 +36,7 @@ const Hero = () => {
                             <Star/>
                         </div>
                         <Label content={data.label}/>
+                        <p>sd</p>
                         <HeroTitle content={data.title}/>
                         <Subtitle content={data.subtitle}/>
                         <ButtonBorder text={data.button_text} type={data.button_type}/>
