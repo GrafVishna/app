@@ -1,0 +1,19 @@
+
+.subtitle {
+  color: $colorGray;
+  line-height: 1.6;
+  padding-top: toRem(30);
+  padding-left: toRem(30);
+  padding-bottom: toRem(15);
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: toRem(2);
+    height: 100%;
+    background: $gradientLine;
+  }
+}

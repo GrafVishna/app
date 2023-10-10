@@ -1,0 +1,4 @@
+.s-title {
+   @include adaptiveValue("font-size", 60, 38, 0, 1700, 991);
+   text-transform: capitalize;
+}

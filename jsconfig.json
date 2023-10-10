@@ -1,0 +1,23 @@
+{
+   "compilerOptions": {
+      "target": "es2020",
+      "baseUrl": ".",
+      "paths": {
+         "@src/*": [
+            "src/*"
+         ],
+         "@components/*": [
+            "src/assets/components/*"
+         ],
+         "@pages/*": [
+            "src/assets/pages/*"
+         ],
+         "@data/*": [
+            "src/assets/data/*"
+         ],
+         "@functions/*": [
+            "src/assets/functions/*"
+         ]
+      }
+   }
+}

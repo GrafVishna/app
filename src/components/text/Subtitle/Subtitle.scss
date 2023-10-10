@@ -1,0 +1,3 @@
+.hero-subtitle {
+   @include adaptiveValue("font-size", 20, 16, 0, 1700, 991);
+}

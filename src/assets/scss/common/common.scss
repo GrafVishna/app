@@ -1,0 +1,159 @@
+@import "../mixins";
+@import "../fonts/fonts";
+
+// todo => Global Styles ========================================================================================================================================================
+
+html,
+body,
+#root {
+  min-height: 100vh;
+}
+
+.s-container {
+  @if ($maxWidthContainer>0) {
+    max-width: toRem($containerWidth);
+    margin: 0 auto;
+  }
+  @if ($containerPadding>0) {
+    @if ($maxWidthContainer>0) {
+      padding: 0 calc($containerPadding / 2);
+    } @else {
+      padding: 0 toRem(15);
+    }
+  }
+}
+
+.s-container-big {
+  @if ($maxWidthContainerBig>0) {
+    max-width: toRem($containerWidthBig);
+    margin: 0 auto;
+  }
+  @if ($containerPadding>0) {
+    @if ($maxWidthContainerBig>0) {
+      padding: 0 calc($containerPadding / 2);
+    } @else {
+      padding: 0 toRem(15);
+    }
+  }
+}
+
+// ========================================================================================================================================================
+
+body * {
+  line-height: 1.3;
+  font-size: $fontSize;
+  font-family: $fontFamilyMain;
+}
+
+html.lock {
+  overflow: hidden;
+
+  body,
+  header {
+    @media (any-hover: hover) {
+      padding-right: calc(15px - (100vw - 100%));
+    }
+  }
+}
+
+body {
+  background-image: $texture;
+  background-color: $bgColor;
+  color: $mainColor;
+}
+
+.decor-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  line-height: 1;
+  color: $bgColor;
+  opacity: 0.4;
+  font-weight: 900;
+}
+
+.decor-text-hero {
+  @include adaptiveValue("font-size", 168, 120, 0, 1700, 991);
+}
+
+//========================================================================================================================================================
+.simplebar-content-wrapper {
+  outline: none;
+}
+
+.simplebar-track.simplebar-horizontal {
+  background-color: $colorLightDarkGray;
+  height: toRem(15) !important;
+  display: flex;
+  justify-content: space-between;
+  z-index: 50;
+  
+  pointer-events: all;
+  padding: toRem(3);
+
+  &::before,
+  &::after {
+    content: '';
+    clip-path: polygon(100% 0, 0 50%, 100% 100%);
+    background-color: #fff;
+    height: toRem(8);
+    width: toRem(6);
+    flex: 0 0 toRem(6);
+  }
+
+  &::after {
+    transform: rotate(180deg);
+  }
+
+  .simplebar-scrollbar {
+    pointer-events: all;
+
+    &::before {
+      background-color: $colorGray2 !important;
+      opacity: 1;
+      left: toRem(20);
+      right: toRem(20);
+      border-radius: toRem(0);
+    }
+
+    &::before {
+      //display: none;
+    }
+  }
+}
+
+.lg-backdrop.in {
+  //opacity: 0.7 !important;
+  background-color: rgba(0, 0, 0, 0.42);
+  backdrop-filter: blur(15px) !important;
+}
+
+.lg-outer .lg-content {
+  top: toRem(60) !important;
+  bottom: toRem(120) !important;
+}
+
+.lg-item img {
+  box-shadow: 0 0 toRem(40) toRem(-20) $bgColor;
+}
+
+.lg-show-in .lg-toolbar, .lg-show-in .lg-prev, .lg-show-in .lg-next, .lg-show-in .lg-pager-outer {
+  backdrop-filter: blur(10px) !important;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.lg-outer.lg-components-open:not(.lg-zoomed) .lg-sub-html {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: toRem(20);
+  backdrop-filter: blur(10px) !important;
+  border-top: toRem(1) solid #000;
+
+  h4 {
+    font-size: toRem(20);
+  }
+
+  p {
+    font-size: toRem(14);
+    color: $colorGray;
+  }
+}

@@ -1,0 +1,22 @@
+[
+   {
+      "src": "./img/gallery-four/gal-01.jpg",
+      "title": "Floor plan",
+      "subtitle": "Tempor incididunt ut labore et dolore magna aliqua. "
+   },
+   {
+      "src": "./img/gallery-four/gal-02.jpg",
+      "title": "Interior Design",
+      "subtitle": "Tempor incididunt ut labore et dolore magna aliqua. Ut enim ad"
+   },
+   {
+      "src": "./img/gallery-four/gal-03.jpg",
+      "title": "Architecture Design",
+      "subtitle": "Tempor incididunt ut labore et dolore magna aliqua."
+   },
+   {
+      "src": "./img/gallery-four/gal-04.jpg",
+      "title": "Construction",
+      "subtitle": "Tempor incididunt ut labore et dolore magna aliqua."
+   }
+]

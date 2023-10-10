@@ -1,0 +1,3 @@
+.hero-title {
+   @include adaptiveValue("font-size", 84, 40, 0, 1700, 991);
+}

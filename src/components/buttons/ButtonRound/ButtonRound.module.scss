@@ -1,0 +1,53 @@
+.btn_round {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 50%;
+   width: toRem(151);
+   height: toRem(151);
+   flex: 0 0 toRem(151);
+   position: relative;
+   transition: transform 0.3s;
+   will-change: transform;
+   @media (any-hover: hover) {
+      &:hover {
+         transform: scale(1.1);
+      }
+   }
+}
+
+.btn_star {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   fill: #fff;
+   width: toRem(37);
+   height: toRem(37);
+}
+
+.circular {
+   width: toRem(151);
+   height: toRem(151);
+   animation: btn-round 7s linear infinite;
+}
+
+.circular svg {
+   text {
+      fill: $colorGray;
+   }
+   path {
+      fill: none;
+   }
+}
+
+textPath {
+   display: flex;
+   justify-content: space-between;
+}
+
+@keyframes btn-round {
+   100% {
+      transform: rotate(360deg);
+   }
+}

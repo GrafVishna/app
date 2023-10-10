@@ -1,0 +1,12 @@
+.img-card {
+   &__content {
+      padding: toRem(30);
+      @media (max-width: $tablet) {
+         padding: toRem(20);
+      }
+   }
+}
+
+.item-title {
+   @include adaptiveValue("font-size", 24, 20, 0, 1700, 991);
+}

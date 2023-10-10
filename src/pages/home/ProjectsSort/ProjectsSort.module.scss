@@ -1,0 +1,121 @@
+
+.projects {
+  padding: toRem(70) 0;
+  @media (max-width: $mobile) {
+    padding: toRem(50) 0;
+  }
+  @media (max-width: $mobileSmall) {
+    padding: toRem(40) 0;
+  }
+}
+
+.projects__header {
+  display: grid;
+  grid-template-columns: auto  auto;
+  justify-content: space-between;
+  align-items: end;
+  gap: toRem(50);
+  @media (max-width: em(950)) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, auto);
+    text-align: center;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: toRem(50);
+    @media (max-width: $mobile) {
+      margin-bottom: toRem(30);
+    }
+  }
+}
+
+.projects__info {
+}
+
+.projects__sort_nav {
+  @include adaptiveValue('padding-bottom', 20, 10, 0, 1500, 991);
+
+  ul {
+    display: flex;
+    align-items: center;
+    column-gap: toRem(40);
+    flex-wrap: wrap;
+    row-gap: toRem(15);
+    justify-content: end;
+    @media (max-width: em(950)) {
+      justify-content: center;
+      column-gap: toRem(30);
+    }
+    @media (max-width: $mobile) {
+      column-gap: toRem(20);
+    }
+
+    li {
+      button {
+        font-weight: 600;
+        color: $colorGray;
+        font-size: toRem(16);
+        position: relative;
+
+        &:before {
+          content: '';
+          position: absolute;
+          bottom: toRem(-2);
+          left: 0;
+          width: 100%;
+          height: toRem(2);
+          background-color: $colorGray;
+          opacity: 0;
+          transition: opacity 0.2s;
+        }
+
+        @media (any-hover: hover) {
+          &:hover {
+            &:before {
+              opacity: 1;
+            }
+          }
+        }
+
+        &.active {
+          color: $colorDecor;
+
+          &:before {
+            opacity: 1;
+            background-color: $colorDecor;
+          }
+        }
+      }
+    }
+  }
+}
+
+.projects__items {
+  & > div > div {
+    @media (min-width: $mobile) {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: toRem(20);
+    }
+    @media (min-width: $mobile) {
+      padding-bottom: 5%;
+    }
+    @media (max-width: mobile) {
+      gap: toRem(0);
+    }
+
+    & > div {
+
+      @media (min-width: $mobile) {
+        &:nth-child(even) {
+          transform: translateY(10%);
+        }
+      }
+    }
+  }
+}
+
+.projects__image {
+  padding-bottom: 162%;
+}
+

@@ -1,0 +1,38 @@
+.grades {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: space-between;
+  column-gap: toRem(20);
+  width: 100%;
+
+  @media (max-width: em(420)) {
+    column-gap: toRem(15);
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  li {
+    text-align: center;
+  }
+}
+
+.percents {
+  font-family: $fontFamilySecondary;
+  @include adaptiveValue("font-size", 64, 44);
+  color: $colorDecor;
+
+  &:not(:last-child) {
+    margin-bottom: toRem(5);
+  }
+
+  span {
+    font-size: toRem(32);
+  }
+}
+
+.text {
+  font-size: toRem(18);
+  color: $colorGray;
+  @media (max-width: em(420)) {
+    font-size: toRem(14);
+  }
+}

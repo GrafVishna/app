@@ -1,0 +1,91 @@
+
+.experience {
+  background-color: $colorDarkGray;
+  padding: toRem(70) 0;
+
+  @media (max-width: $mobile) {
+    padding: toRem(50) 0;
+  }
+  @media (max-width: $mobileSmall) {
+    padding: toRem(40) 0;
+  }
+  position: relative;
+
+  & > div {
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: 0.95fr 1fr;
+    align-items: center;
+    position: relative;
+    z-index: 5;
+    @media (max-width: $mobile) {
+      grid-template-columns: 1fr;
+      row-gap: toRem(20);
+    }
+  }
+
+  &__image {
+    padding-right: toRem(50);
+    @media (max-width: $tablet) {
+      padding-right: toRem(20);
+    }
+    @media (max-width: $mobile) {
+      grid-row: 2/3;
+      padding-right: 0;
+    }
+
+    & > div {
+      position: relative;
+      padding-bottom: 77%;
+    }
+
+    svg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__content {
+    max-width: toRem(450);
+    @media (max-width: $mobile) {
+      grid-row: 1/2;
+    }
+
+    button {
+      text-transform: capitalize !important;
+    }
+
+    & > div {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      @include adaptiveValue("row-gap", 50, 30, 0, 1500, 991);
+      @media (max-width: $tablet) {
+
+      }
+
+      & > * {
+        margin: 0;
+      }
+    }
+  }
+}
+
+.leter {
+  position: absolute;
+  right: 0;
+  top: toRem(-10);
+  bottom: toRem(-10);
+
+  @media (max-width: $mobile) {
+    display: none;
+  }
+
+  img {
+    height: 100%;
+  }
+}
+

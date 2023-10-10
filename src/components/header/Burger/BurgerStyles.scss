@@ -1,0 +1,35 @@
+.menu-btn {
+   svg {
+      transition: transform 0.4s;
+      path {
+         transition:
+            transform 0.6s,
+            opacity 0.6s;
+      }
+   }
+   &.menu-open {
+      svg {
+         transform: rotate(45deg) scale(1.2);
+         path {
+            &:nth-child(1),
+            &:nth-child(3),
+            &:nth-child(7),
+            &:nth-child(9) {
+               opacity: 0;
+            }
+            &:nth-child(1) {
+               transform: translate(toRem(-3), toRem(-3));
+            }
+            &:nth-child(3) {
+               transform: translate(toRem(-3), toRem(3));
+            }
+            &:nth-child(7) {
+               transform: translate(toRem(3), toRem(-3));
+            }
+            &:nth-child(9) {
+               transform: translate(toRem(3), toRem(3));
+            }
+         }
+      }
+   }
+}
