@@ -3,7 +3,7 @@ name: SSH deploy on push
 on:
   push:
     branches:
-      - main  # або замість 'main' вкажіть назву вашої головної гілки
+      - main
 
 jobs:
   build:
@@ -16,7 +16,7 @@ jobs:
       - name: Install Node.js and Yarn
         uses: actions/setup-node@v3
         with:
-          node-version: 14  # Вкажіть ту версію Node.js, яку ви використовуєте
+          node-version: 20
 
       - name: Install dependencies
         run: yarn install
@@ -25,14 +25,14 @@ jobs:
         uses: burnett01/rsync-deployments@5.2.1
         with:
           switches: -avzr --delete
-          path: ./  # Змінено шлях на корінь репозиторію
+          path: ./dist/
           remote_host: ${{ secrets.REMOTE_HOST }}
           remote_user: ${{ secrets.REMOTE_USER }}
           remote_key: ${{ secrets.REMOTE_KEY }}
           remote_path: ${{ secrets.REMOTE_PATH }}/backup-$(date +"%Y%m%d%H%M%S")
 
       - name: Build project
-        run: yarn build  # Переконайтеся, що ця команда генерує файли у папці dist
+        run: yarn build
 
       - name: Deploy to remote server
         uses: burnett01/rsync-deployments@5.2.1
@@ -43,3 +43,10 @@ jobs:
           remote_user: ${{ secrets.REMOTE_USER }}
           remote_key: ${{ secrets.REMOTE_KEY }}
           remote_path: ${{ secrets.REMOTE_PATH }}
+
+
+
+
+
+
+
