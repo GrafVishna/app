@@ -1,0 +1,37 @@
+
+.team {
+  padding: toRem(70) 0;
+  @media (max-width: $mobile) {
+    padding: toRem(50) 0;
+  }
+  @media (max-width: $mobileSmall) {
+    padding: toRem(40) 0;
+  }
+}
+
+.header {
+  &:not(:last-child) {
+    margin-bottom: toRem(60);
+  }
+
+  @media (max-width: $tablet) {
+    &:not(:last-child) {
+      margin-bottom: toRem(40);
+    }
+  }
+}
+
+.image {
+  padding-bottom: 50%;
+  min-height: toRem(280);
+
+  &:not(:last-child) {
+    margin-bottom: toRem(40);
+  }
+
+  @media (max-width: $tablet) {
+    &:not(:last-child) {
+      margin-bottom: toRem(30);
+    }
+  }
+}

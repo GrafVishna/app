@@ -1,0 +1,16 @@
+
+.peoples_list {
+  li {
+    @include adaptiveValue("font-size", 24, 16, 0, 1500, 490);
+    font-weight: 500;
+    letter-spacing: toRem(0.72);
+    text-transform: uppercase;
+    padding: toRem(16) 0;
+    border-bottom: toRem(1) solid rgba($colorGray, $alpha1);
+    white-space: nowrap;
+  }
+}
+
+.peoples_scroll {
+  padding-bottom: toRem(30);
+}

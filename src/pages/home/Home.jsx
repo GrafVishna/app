@@ -8,6 +8,7 @@ import styles from './Home.module.scss'
 import ProjectsSort from "@src/pages/home/ProjectsSort/ProjectsSort.jsx";
 import Experience from "@src/pages/home/Experience/Experience.jsx";
 import Availability from "@src/pages/home/Availability/Availability.jsx";
+import Team from "@src/pages/home/Team/Team.jsx";
 
 
 const Home = () => {
@@ -17,12 +18,12 @@ const Home = () => {
             <Header/>
             <div className={styles.page}>
                 <Hero/>
-                <p>s</p>
                 <GalleryFour data={galleryData}/>
                 <About/>
                 <ProjectsSort/>
                 <Experience/>
                 <Availability/>
+                <Team/>
             </div>
         </div>
     )

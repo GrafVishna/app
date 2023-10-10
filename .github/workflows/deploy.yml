@@ -24,11 +24,6 @@ jobs:
       - name: Build project
         run: yarn build
 
-      - name: Copy files to backup directory
-        run: |
-          mkdir -p backup/$(date '+%Y%m%d_%H%M%S')
-          rsync -av --exclude 'backup' ./dist/ backup/$(date '+%Y%m%d_%H%M%S')/
-
       - name: Deploy to remote server
         uses: burnett01/rsync-deployments@5.2.1
         with:
