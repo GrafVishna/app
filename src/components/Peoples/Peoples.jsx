@@ -7,8 +7,10 @@ const Peoples = () => {
             <div>
                 <ul className={styles.peoples_list}>
                     <li>Cody Fisher - CEO</li>
+                    <li>Savannah Nguyen - Interior architect</li>
                     <li>Jerome Bell - Interior</li>
                     <li>Cameron Williamson - architect</li>
+                    <li>Marvin McKinney - Construction head</li>
                 </ul>
             </div>
         </SimpleBar>
