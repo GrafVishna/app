@@ -21,22 +21,41 @@
 #       # Deploy
 #       # cd dist &&
 #       - run: rsync -e "ssh -p 20022 -i $HOME/.ssh/app -o StrictHostKeyChecking=no" --archive --compress --delete . gc485015_admin@gc485015.ftp.tools:/home/gc485015/artem.monster/app-test/
-
+#
+#
+# # m71516@hostru04.fornex.org:/home/m71516/public_html/wp.maxgraph.ru
 
 name: SSH deploy on push
-on: push
+
+on:
+  push:
+    branches:
+      - main  # або замість 'main' вкажіть назву вашої головної гілки
+
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
-      - name: rsync deploy
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install Node.js and Yarn
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build project
+        run: yarn build
+
+      - name: Deploy to remote server
         uses: burnett01/rsync-deployments@5.2.1
-      - run: yarn install
-      - run: yarn build
         with:
           switches: -avzr --delete
-          path: .
+          path: ./dist/
           remote_host: ${{ secrets.REMOTE_HOST }}
           remote_user: ${{ secrets.REMOTE_USER }}
           remote_key: ${{ secrets.REMOTE_KEY }}

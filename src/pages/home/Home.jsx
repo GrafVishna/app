@@ -16,6 +16,7 @@ const Home = () => {
         <div className={styles.wrapper}>
             <Header/>
             <div className={styles.page}>
+                <h1>TEST</h1>
                 <Hero/>
                 <GalleryFour data={galleryData}/>
                 <About/>
