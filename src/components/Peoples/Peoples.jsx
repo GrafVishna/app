@@ -9,8 +9,6 @@ const Peoples = () => {
                     <li>Cody Fisher - CEO</li>
                     <li>Jerome Bell - Interior</li>
                     <li>Cameron Williamson - architect</li>
-                    <li>Cameron Williamson - architect</li>
-                    <li>Cameron Williamson - architect</li>
                 </ul>
             </div>
         </SimpleBar>
