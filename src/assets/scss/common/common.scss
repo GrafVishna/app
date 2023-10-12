@@ -37,6 +37,12 @@ body,
   }
 }
 
+.s_container_npd {
+  max-width: toRem(1807);
+  margin: 0 auto;
+  padding: 0 !important;
+}
+
 // ========================================================================================================================================================
 
 body * {
@@ -57,9 +63,13 @@ html.lock {
 }
 
 body {
-  background-image: $texture;
   background-color: $bgColor;
   color: $mainColor;
+}
+
+.body_block {
+  background-image: $texture;
+
 }
 
 .decor-text {
@@ -87,7 +97,7 @@ body {
   display: flex;
   justify-content: space-between;
   z-index: 50;
-  
+
   pointer-events: all;
   padding: toRem(3);
 
@@ -156,4 +166,20 @@ body {
     font-size: toRem(14);
     color: $colorGray;
   }
+}
+
+.light {
+  display: block;
+  width: toRem(200);
+  height: toRem(200);
+  background-color: #fff;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  filter: blur(70px);
+  opacity: 0.05;
+  transition: all 0.8s cubic-bezier(0, 0, 0.3, 0.98);
 }

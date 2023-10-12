@@ -57,11 +57,11 @@
 
     @media (any-hover: hover) {
       &:hover {
-        &::before {
-          transition: opacity 0.4s, transform 0.5s;
-          transform: scaleX(1);
-          opacity: 1;
-        }
+        //&::before {
+        //  transition: opacity 0.4s, transform 0.5s;
+        //  transform: scaleX(1);
+        //  opacity: 1;
+        //}
 
         td a {
           color: $colorDecor2;

@@ -45,8 +45,8 @@ const Hero = () => {
                     </div>
                     <DecorText className='decor-text-hero' content="Interior"/>
                     <span className={styles.decor_line}>
-                  <img src={decorLine} alt="" className='w-full'/>
-               </span>
+                        <img src={decorLine} alt="" className='w-full'/>
+                    </span>
                 </div>
             </Container>
         </div>

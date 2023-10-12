@@ -6,6 +6,7 @@ const getDataApi = {
         return response.data
     }
 }
+
 const getDataApiTest = {
     async getAll() {
         const response = await axios.get(`https://raw.githubusercontent.com/GrafVishna/OTHER/main/data.json`)
@@ -13,4 +14,4 @@ const getDataApiTest = {
     }
 }
 
-export {getDataApi, getDataApiTest}
+export {getDataApi}

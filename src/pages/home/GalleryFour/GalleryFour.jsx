@@ -1,5 +1,5 @@
 import {Swiper, SwiperSlide} from 'swiper/react'
-
+import 'lightgallery/css/lightgallery.css';
 import PropTypes from 'prop-types'
 import Container from '@src/components/containers/Container.jsx'
 import GalleryCard from '@src/components/media/GalleryCard/GalleryCard.jsx'
@@ -7,6 +7,8 @@ import Label from '@src/components/text/Label/Label.jsx'
 import TitleSection from '@src/components/text/TitleSection/TitleSection.jsx'
 import styles from './GalleryFour.module.scss'
 import 'swiper/scss'
+import {ScreenLockToggle} from "@src/functions/ScreenLock.jsx";
+import Gallery from "@src/components/Gallery/Gallery.jsx";
 
 const GalleryFour = (props) => {
 
@@ -20,26 +22,28 @@ const GalleryFour = (props) => {
                         <TitleSection content="Our Specializations"/>
                     </div>
                     <div className={styles.gallery_slider}>
-                        <Swiper
-                            spaceBetween={15}
-                            slidesPerView={1.2}
-                            autoHeight={false}
-                            className={styles.gallery_wrapper}
-                            breakpoints={{
-                                767.98: {
-                                    slidesPerView: 4,
-                                },
-                                479.98: {
-                                    slidesPerView: 2.2,
-                                }
-                            }}
-                        >
-                            {props.data.map((element, index) => (
-                                <SwiperSlide key={index} className={styles.gallery_slide}>
-                                    <GalleryCard elementData={element}/>
-                                </SwiperSlide>
-                            ))}
-                        </Swiper>
+                        <Gallery>
+                            <Swiper
+                                spaceBetween={15}
+                                slidesPerView={1.2}
+                                autoHeight={false}
+                                className={styles.gallery_wrapper}
+                                breakpoints={{
+                                    767.98: {
+                                        slidesPerView: 4,
+                                    },
+                                    479.98: {
+                                        slidesPerView: 2.2,
+                                    }
+                                }}
+                            >
+                                {props.data.map((element, index) => (
+                                    <SwiperSlide key={index} className={styles.gallery_slide}>
+                                        <GalleryCard elementData={element}/>
+                                    </SwiperSlide>
+                                ))}
+                            </Swiper>
+                        </Gallery>
                     </div>
                 </div>
             </Container>

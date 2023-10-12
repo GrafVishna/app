@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import Header from '@src/components/header/Header'
 import Hero from '@src/pages/home/Hero/Hero'
 import GalleryFour from '@src/pages/home/GalleryFour/GalleryFour'
@@ -9,6 +9,7 @@ import ProjectsSort from "@src/pages/home/ProjectsSort/ProjectsSort.jsx";
 import Experience from "@src/pages/home/Experience/Experience.jsx";
 import Availability from "@src/pages/home/Availability/Availability.jsx";
 import Team from "@src/pages/home/Team/Team.jsx";
+import PhotosScroll from "@src/pages/home/PhotosScroll/PhotosScroll.jsx";
 
 
 const Home = () => {
@@ -24,6 +25,7 @@ const Home = () => {
                 <Experience/>
                 <Availability/>
                 <Team/>
+                <PhotosScroll/>
             </div>
         </div>
     )

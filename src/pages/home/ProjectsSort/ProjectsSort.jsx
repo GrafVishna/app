@@ -1,15 +1,13 @@
 import styles from './ProjectsSort.module.scss'
-import React, {useContext, useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import Image from '@src/components/media/Image/Image.jsx'
 import Label from "@src/components/text/Label/Label.jsx";
 import TitleSection from "@src/components/text/TitleSection/TitleSection.jsx";
 import {getDataApi} from '@data/getDataApi.js';
 import Container from "@src/components/containers/Container.jsx";
-import {MenuContext} from "@src/providers/UpdateMenuProvider.jsx";
 import {Swiper, SwiperSlide} from "swiper/react";
 
 const ProjectsSort = () => {
-    const {stateMenu, setStateMenu} = useContext(MenuContext);
     const [data, setData] = useState([]);
     useEffect(() => {
         const fetchData = async () => {
@@ -23,7 +21,6 @@ const ProjectsSort = () => {
 
         fetchData();
     }, []);
-
 
     return (
         <div className={styles.projects}>
@@ -66,7 +63,7 @@ const ProjectsSort = () => {
                             }}
                     >
 
-                        {data.map((item, index) => (
+                        {data?.map((item, index) => (
                             <SwiperSlide key={item.id} data-category={"project-" + item.category}
                                          className={styles.projects__item}>
                                 <Image src={item.src} className={styles.projects__image}/>

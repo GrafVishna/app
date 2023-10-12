@@ -5,8 +5,7 @@ import TitleSection from "@src/components/text/TitleSection/TitleSection.jsx";
 import React from "react";
 import ButtonBorder from "@src/components/buttons/ButtonBorder.jsx";
 import Grades from "@src/components/Grades/Grades.jsx";
-
-const leter = '/public/img/r.svg'
+import Leter from "@src/components/media/Leter/Leter.jsx";
 
 export const Experience = () => {
 
@@ -23,12 +22,11 @@ export const Experience = () => {
             "percents": "65",
             "text": "Interior Design"
         }
-
     ]
 
     return (
         <div className={styles.experience}>
-            
+
             <div>
                 <Container containerSize='s-container'>
                     <div className={styles.experience__body}>
@@ -47,7 +45,7 @@ export const Experience = () => {
                     </div>
                 </Container>
                 <div className={styles.leter}>
-                    <img src={leter} alt="Leter"/>
+                    {/*<Leter/>*/}
                 </div>
             </div>
         </div>

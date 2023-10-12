@@ -1,12 +1,13 @@
-import React, {useState, useEffect, useContext} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import PropTypes from 'prop-types';
-import {getDataApi, getDataApiTest} from '@data/getDataApi.js';
+import {getDataApi} from '@data/getDataApi.js';
 import MenuItem from './MenuItem.jsx';
 import './HeaderMenu.scss';
-import {MenuContext, UpdateMenuProvider} from "@src/providers/UpdateMenuProvider.jsx";
+import {MenuContext} from "@src/providers/UpdateMenuProvider.jsx";
 
 const Menu = () => {
     const {stateMenu, setStateMenu} = useContext(MenuContext);
+
     const [data, setData] = useState([]);
     useEffect(() => {
         const fetchData = async () => {
@@ -20,22 +21,6 @@ const Menu = () => {
 
         fetchData();
     }, []);
-
-    // const [data2, setData2] = useState([]);
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //         try {
-    //             const data2 = await getDataApiTest.getAll();
-    //             setData2(data2);
-    //             console.log(data2.test)
-    //             console.log(data2.test[1])
-    //         } catch (error) {
-    //             console.error('Error fetching data:', error);
-    //         }
-    //     };
-    //
-    //     fetchData();
-    // }, []);
 
 
     return (
