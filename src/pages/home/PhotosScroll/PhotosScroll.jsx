@@ -25,7 +25,7 @@ const PhotosScroll = () => {
     return (
         <div className={styles.photos_scroll}>
             <Container containerSize="s_container_npd">
-                <Gallery>
+                <Gallery params={{getCaptionFromTitleOrAlt: false}}>
                     <SimpleBar className={styles.photo_simple}>
                         <ul className={styles.items}>
                             {data?.map((photo, index) => (

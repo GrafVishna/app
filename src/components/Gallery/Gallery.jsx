@@ -2,7 +2,7 @@ import {ScreenLockToggle} from "@src/functions/ScreenLock.jsx";
 import LightGallery from 'lightgallery/react';
 import 'lightgallery/css/lightgallery.css';
 
-const Gallery = ({children}) => {
+const Gallery = ({children, params}) => {
     return (
         <LightGallery
             speed={500}
@@ -10,6 +10,7 @@ const Gallery = ({children}) => {
             onAfterOpen={() => ScreenLockToggle(true)}
             onAfterClose={() => ScreenLockToggle(false)}
             selector={'.gallery-item'}
+            {...params}
         >
             {children}
         </LightGallery>
