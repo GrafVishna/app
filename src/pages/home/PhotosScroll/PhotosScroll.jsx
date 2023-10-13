@@ -23,9 +23,9 @@ const PhotosScroll = () => {
     }, []);
 
     return (
-        <div className={styles.photos_scroll}>
+        <div className={`${styles.photos_scroll} photos_scroll`}>
             <Container containerSize="s_container_npd">
-                <Gallery params={{getCaptionFromTitleOrAlt: false}}>
+                <Gallery params={{getCaptionFromTitleOrAlt: false, addClass: "no-margin"}}>
                     <SimpleBar classNames={{track: 'simplebar-track simplebar-horizontal photos_simple'}}
                                className={styles.photo_simple}>
                         <ul className={styles.items}>

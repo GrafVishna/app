@@ -24,7 +24,7 @@ const GalleryFour = (props) => {
                     </div>
 
                     <div className={styles.gallery_slider}>
-                        <Gallery>
+                        <Gallery params={{addClass: "gallery-margin"}}>
                             <GalleryFourSlider className={styles.gallery_wrapper}>
                                 {props.data.map((element, index) => (
                                     <SwiperSlide key={index} className={styles.gallery_slide}>

@@ -10,6 +10,12 @@
   transition: color 0.2s,
   border-color 0.2s;
   position: relative;
+  @media (max-width: $tablet) {
+    height: toRem(45);
+  }
+  @media (max-width: $mobile) {
+    height: toRem(40);
+  }
 
   &::before {
     content: "";

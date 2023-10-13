@@ -10,6 +10,7 @@ import Experience from "@src/pages/home/Experience/Experience.jsx";
 import Availability from "@src/pages/home/Availability/Availability.jsx";
 import Team from "@src/pages/home/Team/Team.jsx";
 import PhotosScroll from "@src/pages/home/PhotosScroll/PhotosScroll.jsx";
+import Footer from "@src/components/footer/Footer.jsx";
 
 
 const Home = () => {
@@ -26,6 +27,7 @@ const Home = () => {
                 <Availability/>
                 <Team/>
                 <PhotosScroll/>
+                <Footer/>
             </div>
         </div>
     )
