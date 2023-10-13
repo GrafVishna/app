@@ -90,8 +90,19 @@
   }
 }
 
+.photos_scr {
+  opacity: 0.1;
+}
+
+.projects__item {
+  cursor: pointer;
+  @media (min-width: $mobile) {
+    width: 100% !important;
+  }
+}
+
 .projects__items {
-  & > div > div {
+  & > div > div > div {
     @media (min-width: $mobile) {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -100,7 +111,7 @@
     @media (min-width: $mobile) {
       padding-bottom: 5%;
     }
-    @media (max-width: mobile) {
+    @media (max-width: $mobile) {
       gap: toRem(0);
     }
 

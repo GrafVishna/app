@@ -9,6 +9,7 @@ import styles from './GalleryFour.module.scss'
 import 'swiper/scss'
 import {ScreenLockToggle} from "@src/functions/ScreenLock.jsx";
 import Gallery from "@src/components/Gallery/Gallery.jsx";
+import GalleryFourSlider from "@src/pages/home/GalleryFour/GalleryFourSlider.jsx";
 
 const GalleryFour = (props) => {
 
@@ -21,28 +22,16 @@ const GalleryFour = (props) => {
                         <Label content="TOP SERVICES"/>
                         <TitleSection content="Our Specializations"/>
                     </div>
+
                     <div className={styles.gallery_slider}>
                         <Gallery>
-                            <Swiper
-                                spaceBetween={15}
-                                slidesPerView={1.2}
-                                autoHeight={false}
-                                className={styles.gallery_wrapper}
-                                breakpoints={{
-                                    767.98: {
-                                        slidesPerView: 4,
-                                    },
-                                    479.98: {
-                                        slidesPerView: 2.2,
-                                    }
-                                }}
-                            >
+                            <GalleryFourSlider className={styles.gallery_wrapper}>
                                 {props.data.map((element, index) => (
                                     <SwiperSlide key={index} className={styles.gallery_slide}>
                                         <GalleryCard elementData={element}/>
                                     </SwiperSlide>
                                 ))}
-                            </Swiper>
+                            </GalleryFourSlider>
                         </Gallery>
                     </div>
                 </div>

@@ -26,7 +26,8 @@ const PhotosScroll = () => {
         <div className={styles.photos_scroll}>
             <Container containerSize="s_container_npd">
                 <Gallery params={{getCaptionFromTitleOrAlt: false}}>
-                    <SimpleBar className={styles.photo_simple}>
+                    <SimpleBar classNames={{track: 'simplebar-track simplebar-horizontal photos_simple'}}
+                               className={styles.photo_simple}>
                         <ul className={styles.items}>
                             {data?.map((photo, index) => (
                                 <a href={photo.src} key={index} className={`gallery-item ${styles.item}`}>
