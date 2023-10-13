@@ -29,6 +29,7 @@
 }
 
 .logo {
+
   & > div {
     max-width: toRem(138);
     @media (max-width: $tablet) {
