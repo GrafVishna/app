@@ -40,7 +40,7 @@ const Hero = (props) => {
                     trigger: '[data-anim="hero"]',
                     start: "20% 0%",
                     end: "100% 30%",
-                    markers: {startColor: "#d9f1a8", endColor: "#d9f1a8"}
+                    // markers: {startColor: "#d9f1a8", endColor: "#d9f1a8"}
                 }
             });
 

@@ -30,7 +30,7 @@ const GalleryFour = (props) => {
                     trigger: '[data-anim="header"]',
                     start: "0% 90%",
                     end: "50% 60%",
-                    markers: {startColor: "white", endColor: "white"}
+                    // markers: {startColor: "white", endColor: "white"}
                 }
             });
             let tlCards = gsap.timeline({
@@ -39,7 +39,7 @@ const GalleryFour = (props) => {
                     trigger: '[data-anim="cards"]',
                     start: "0% 100%",
                     end: "50% 70%",
-                    markers: {startColor: "#f4c2c2", endColor: "#f4c2c2"}
+                    // markers: {startColor: "#f4c2c2", endColor: "#f4c2c2"}
                 }
             });
             let tlCardsC = gsap.timeline({
@@ -48,7 +48,7 @@ const GalleryFour = (props) => {
                     trigger: '[data-anim="cards-c"]',
                     start: "0% 100%",
                     end: "50% 70%",
-                    markers: {startColor: "#ef3b3b", endColor: "#ef3b3b"}
+                    // markers: {startColor: "#ef3b3b", endColor: "#ef3b3b"}
                 }
             });
 
