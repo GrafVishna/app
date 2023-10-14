@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from "react";
+import React, {useContext, useEffect, useLayoutEffect, useRef, useState} from "react";
 import Header from '@src/components/header/Header'
 import Hero from '@src/pages/home/Hero/Hero'
 import GalleryFour from '@src/pages/home/GalleryFour/GalleryFour'
@@ -14,6 +14,7 @@ import Footer from "@src/components/footer/Footer.jsx";
 
 
 const Home = () => {
+
 
     return (
         <div className={styles.wrapper}>

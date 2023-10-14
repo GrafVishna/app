@@ -9,6 +9,7 @@ const GalleryCard = ({elementData}) => {
     const onInit = () => {
         console.log('lightGallery has been initialized');
     };
+
     return (
 
         <a href={elementData.src}
@@ -26,8 +27,5 @@ const GalleryCard = ({elementData}) => {
     );
 };
 
-GalleryCard.propTypes = {
-    elementData: PropTypes.shape()
-};
 
 export default GalleryCard;

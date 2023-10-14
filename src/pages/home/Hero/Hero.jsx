@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef, useLayoutEffect} from 'react';
 import {getDataApi} from '@data/getDataApi.js';
 import styles from './Hero.module.scss';
 import Container from '@src/components/containers/Container.jsx';
@@ -9,10 +9,11 @@ import Subtitle from '@src/components/text/Subtitle/Subtitle.jsx';
 import Image from '@src/components/media/Image/Image.jsx';
 import Star from '@src/components/media/Star/Star.jsx';
 import ButtonBorder from "@src/components/buttons/ButtonBorder.jsx";
+import {gsap} from "gsap";
 
 const decorLine = './img/decor/decor-line-01.svg';
 
-const Hero = () => {
+const Hero = (props) => {
     const [data, setData] = useState([]);
     useEffect(() => {
         const fetchData = async () => {
@@ -26,10 +27,34 @@ const Hero = () => {
         fetchData();
     }, []);
 
+    const heroRef = useRef()
+    useLayoutEffect(() => {
+        let heroContext = gsap.context(() => {
+            const params = {
+                scrub: true,
+            }
+
+            let tlHero = gsap.timeline({
+                scrollTrigger: {
+                    ...params,
+                    trigger: '[data-anim="hero"]',
+                    start: "20% 0%",
+                    end: "100% 30%",
+                    markers: {startColor: "#d9f1a8", endColor: "#d9f1a8"}
+                }
+            });
+
+            tlHero.to('[data-anim="hero"]', {y: -100, opacity: 0,});
+
+        }, heroRef);
+
+        return () => heroContext.revert();
+    });
+
     return (
-        <div className={styles.hero}>
+        <div ref={heroRef} className={styles.hero}>
             <Container containerSize="s-container-big relative">
-                <div className={styles.hero_grid}>
+                <div data-anim="hero" className={styles.hero_grid}>
                     <div className={styles.hero_content}>
                         <div className={styles.stars}>
                             <Star/>
