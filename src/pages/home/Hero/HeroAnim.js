@@ -16,9 +16,10 @@ export const animation = (media, ref) => {
     media.add({
         // Breakpoints:
         isTablet: "(min-width: 991px)",
+        isMobile: "(max-width: 991px )"
 
     }, (context) => {
-        let {isTablet} = context.conditions
+        let {isMobile, isTablet} = context.conditions
 
         // Title hero
         const tl = gsap.timeline({scrollTrigger: heroTrigger})

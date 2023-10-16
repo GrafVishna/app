@@ -13,9 +13,8 @@ import ButtonBorder from "@src/components/buttons/ButtonBorder.jsx";
 import {animation} from './HeroAnim.js'
 import Line from "@src/components/media/Line/Line.jsx";
 
-const decorLine = './img/decor/decor-line-01.svg';
 
-const Hero = (props) => {
+const Hero = () => {
     const [data, setData] = useState([]);
     useEffect(() => {
         const fetchData = async () => {

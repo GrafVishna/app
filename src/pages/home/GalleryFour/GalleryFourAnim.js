@@ -13,35 +13,35 @@ export const animation = (media, ref) => {
     // ScrollTriggers
     const headerTrigger = {
         trigger: '.anim-cards-header',
-        start: "0% 90%",
-        end: "50% 60%",
+        start: "0% 100%",
+        end: "50% 70%",
         ...commonParameters
     }
     const cardsTrigger = {
         trigger: '.anim-cards',
         start: "0% 100%",
-        end: "50% 70%",
+        end: "50% 90%",
         ...commonParameters
     }
     const cardsCenterTrigger = {
         trigger: '.anim-cards-center',
         start: "0% 100%",
-        end: "50% 70%",
+        end: "50% 90%",
         ...commonParameters
     }
-    
+
     media.add({
         // Breakpoints:
         isMobile: "(max-width: 800px)",
         isDesktop: "(min-width: 800px)",
 
     }, (context) => {
-        let {isMobile, isDesktop} = context.conditions
+        let {isDesktop} = context.conditions
 
         // Header cards
         gsap.from('.anim-cards-header', {
             scrollTrigger: {...headerTrigger},
-            y: isDesktop ? 150 : 80,
+            y: isDesktop ? 170 : 100,
             opacity: 0
         })
         // Cards items

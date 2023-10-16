@@ -1,5 +1,5 @@
 import {useLayoutEffect, useRef} from "react";
-import {Swiper, SwiperSlide} from 'swiper/react'
+import {SwiperSlide} from 'swiper/react'
 
 import 'lightgallery/css/lightgallery.css';
 import PropTypes from 'prop-types'
