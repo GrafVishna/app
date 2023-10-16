@@ -22,7 +22,7 @@ const GalleryFour = (props) => {
         let mm = gsap.matchMedia();
         // Anim Function
         animation(mm, galleryRef)
-        //    *****    //
+        //   *****   //
         return () => mm.revert();
     });
 

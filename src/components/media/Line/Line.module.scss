@@ -1,0 +1,14 @@
+.line_hero {
+  stroke-width: 2;
+  stroke-dasharray: 1300;
+  stroke-dashoffset: 1300;
+  opacity: 0;
+  animation: stroke 4.5s ease 0.4s alternate both;
+}
+
+@keyframes stroke {
+  100% {
+    opacity: 1;
+    stroke-dashoffset: 0;
+  }
+}

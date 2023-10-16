@@ -1,16 +1,20 @@
 .header {
-   padding: toRem(20) 0;
-   position: fixed;
-   top: 0;
-   left: 0;
-   width: 100%;
-   z-index: 100;
-   transition:
-      background-color 0.2s,
-      backdrop-filter 0.2s;
-   backdrop-filter: blur(0);
-   &.scroll {
-      backdrop-filter: blur(10px);
-      background-color: rgba($bgColor, $alpha3);
-   }
+  padding: toRem(20) 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  transition: background-color 0.2s,
+  backdrop-filter 0.2s;
+  backdrop-filter: blur(0);
+
+  &.scroll {
+    backdrop-filter: blur(10px);
+    background-color: rgba($bgColor, $alpha3);
+  }
+
+  @media (max-width: $mobile) {
+    padding: toRem(12) 0;
+  }
 }
