@@ -2,7 +2,7 @@
 
 ![Screenshot](https://adm.tools/uploads/ufm_images/0000/0075/3688/nFi8uF6kX2.jpg)
 
-✅ [Application link](https://app-test.artem.monster){: style="font-size: 16px; color: #ff0000;"}
+# ✅ [Application link](https://app-test.artem.monster)
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
