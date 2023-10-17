@@ -1,6 +1,6 @@
 # React + Vite
 
-![Screenshot](https://adm.tools/uploads/ufm_images/0000/0075/3688/nFi8uF6kX2.jpg)
+![Screenshot]([https://adm.tools/uploads/ufm_images/0000/0075/3688/nFi8uF6kX2.jpg](https://github.com/GrafVishna/OTHER/blob/main/screenshot2.jpg?raw=true))
 
 ### 🌐  [Application link](https://app-test.artem.monster)
 
