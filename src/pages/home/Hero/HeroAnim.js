@@ -1,9 +1,10 @@
 import {gsap} from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
+import {useEffect, useState} from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const animation = (media, ref) => {
+export const animation = (media, ref, percent) => {
 
     // ScrollTriggers
     const heroTrigger = {
