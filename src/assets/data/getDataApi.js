@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const getDataApi = {
     async getAll(table) {
-        const response = await axios.get(`https://app.artem.monster/api.php?table=${table}`)
+        const response = await axios.get(`https://app-test.artem.monster/api.php?table=${table}`)
         return response.data
     }
 }
