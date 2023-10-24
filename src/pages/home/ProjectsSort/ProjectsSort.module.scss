@@ -94,6 +94,16 @@
   opacity: 0.1;
 }
 
+.projects__list {
+  @media (min-width: $mobile) {
+    overflow: visible !important;
+  }
+
+  & > div {
+
+  }
+}
+
 .projects__item {
   cursor: pointer;
   @media (min-width: $mobile) {

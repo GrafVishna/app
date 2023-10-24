@@ -21,11 +21,11 @@ export const animation = (media, ref) => {
 
     media.add({
         // Breakpoints:
-        isTablet: "(min-width: 991px)",
-        isMobile: "(max-width: 991px )"
+        isDesktop: "(min-width: 991px)",
+        isTablet: "(max-width: 991px )"
 
     }, (context) => {
-        let {isMobile, isTablet} = context.conditions
+        let {isMobile, isDesktop} = context.conditions
 
         // Timelines
         const tl = gsap.timeline({scrollTrigger: {trigger: '.anim-about-title', ...aboutTrigger}})
@@ -46,14 +46,14 @@ export const animation = (media, ref) => {
         // Image left
         tl3_1.fromTo('.anim-about-image01 img', {scale: 1.2, duration: 0},
             {scale: 1, duration: 3})
-        tl3_2.fromTo('.anim-about-image01', {y: isTablet ? 150 : 30},
-            {y: isTablet ? -60 : -30})
+        tl3_2.fromTo('.anim-about-image01', {y: isDesktop ? 150 : 30},
+            {y: isDesktop ? -60 : -30})
 
         // Image right
         tl4_1.fromTo('.anim-about-image02 img', {scale: 1.1, duration: 0},
             {scale: 1, duration: 3})
-        tl4_2.fromTo('.anim-about-image02', {y: isTablet ? 120 : 20},
-            {y: isTablet ? -150 : -100})
+        tl4_2.fromTo('.anim-about-image02', {y: isDesktop ? 120 : 20},
+            {y: isDesktop ? -150 : -100})
 
 
     }, ref)

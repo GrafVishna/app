@@ -32,7 +32,7 @@ export const animation = (media, ref) => {
 
     media.add({
         // Breakpoints:
-        isMobile: "(max-width: 800px)",
+        isTablet: "(max-width: 800px)",
         isDesktop: "(min-width: 800px)",
 
     }, (context) => {

@@ -11,13 +11,32 @@ import Availability from "@src/pages/home/Availability/Availability.jsx";
 import Team from "@src/pages/home/Team/Team.jsx";
 import PhotosScroll from "@src/pages/home/PhotosScroll/PhotosScroll.jsx";
 import Footer from "@src/components/footer/Footer.jsx";
+import {gsap} from "gsap";
+import {ScrollSmoother} from "gsap/ScrollSmoother";
 
+gsap.registerPlugin(ScrollSmoother);
 
 const Home = () => {
 
+    const homeRef = useRef();
+    const smoother = useRef();
+
+    // const scrollTo = () => {
+    //     smoother.current.scrollTo('.box-c', true, 'center center');
+    // };
+
+    // useLayoutEffect(() => {
+    //     const ctx = gsap.context(() => {
+    //         smoother.current = ScrollSmoother.create({
+    //             smooth: 2,
+    //             effects: true,
+    //         });
+    //     }, homeRef);
+    //     return () => ctx.revert();
+    // }, []);
 
     return (
-        <div className={styles.wrapper}>
+        <div ref={homeRef} className={styles.wrapper}>
             <Header/>
             <div className={styles.page}>
                 <Hero/>

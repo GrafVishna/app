@@ -7,12 +7,12 @@ import {animation} from "@src/pages/home/About/AboutAnim.js";
 const Statistics = ({className, label, percent}) => {
 
     const [percents, setPercents] = useState(0)
-
+    const statisticsRef = useRef()
+    
     useEffect(() => {
         animStatistics(percents, setPercents, percent, statisticsRef)
-    })
 
-    const statisticsRef = useRef()
+    })
     // useLayoutEffect(() => {
     //     let mm = gsap.matchMedia();
     //     animation(percents, setPercents, percent, mm, statisticsRef)

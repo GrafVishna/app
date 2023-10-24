@@ -16,11 +16,11 @@ export const animation = (media, ref, percent) => {
 
     media.add({
         // Breakpoints:
-        isTablet: "(min-width: 991px)",
-        isMobile: "(max-width: 991px )"
+        isDesktop: "(min-width: 991px)",
+        isTablet: "(max-width: 991px )"
 
     }, (context) => {
-        let {isMobile, isTablet} = context.conditions
+        let {isMobile, isDesktop} = context.conditions
 
         // Title hero
         const tl = gsap.timeline({scrollTrigger: heroTrigger})
@@ -35,10 +35,10 @@ export const animation = (media, ref, percent) => {
             opacity: 0
         })
         gsap.set('.anim-hero-image', {
-            clipPath: isTablet ? 'polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)' : null,
+            clipPath: isDesktop ? 'polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)' : null,
         })
         gsap.set('.anim-hero-image img', {
-            scale: isTablet ? 1.1 : 1
+            scale: isDesktop ? 1.1 : 1
         })
 
         // Timelines & Animations
@@ -52,9 +52,9 @@ export const animation = (media, ref, percent) => {
 
         gsap.to('.anim-hero-image', {
             scrollTrigger: heroTrigger,
-            clipPath: isTablet ? 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)' : null,
-            duration: isTablet ? 1.5 : null,
-            delay: isTablet ? 0.2 : null,
+            clipPath: isDesktop ? 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)' : null,
+            duration: isDesktop ? 1.5 : null,
+            delay: isDesktop ? 0.2 : null,
         })
 
         gsap.to('.anim-hero-image img', {
