@@ -8,7 +8,7 @@ import ButtonRound from '@src/components/buttons/ButtonRound/ButtonRound.jsx'
 import Image from '@src/components/media/Image/Image.jsx'
 import Statistics from '@src/components/text/Statistics/Statistics.jsx'
 import {gsap} from "gsap";
-import {animation} from "@src/pages/home/About/AboutAnim.js";
+import {animation} from "./AboutAnim.js";
 
 const About = () => {
 	 

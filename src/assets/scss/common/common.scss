@@ -221,3 +221,8 @@ body {
   opacity: 0.05;
   transition: all 0.8s cubic-bezier(0, 0, 0.3, 0.98);
 }
+
+.anim-experience-percent,
+.anim-experience-button {
+  //clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+}
