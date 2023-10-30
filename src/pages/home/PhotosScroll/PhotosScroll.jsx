@@ -15,7 +15,7 @@ function LiaSearchPlusSolid() {
 	 return null;
 }
 
-const PhotosScroll = () => {
+const PhotosScroll = ({id}) => {
 	 
 	 const [data, setData] = useState([]);
 	 useEffect(() => {
@@ -40,7 +40,7 @@ const PhotosScroll = () => {
 	 });
 	 
 	 return (
-			<div ref={photos} className={`${styles.photos_scroll} photos_scroll`}>
+			<div id={id && id} ref={photos} className={`${styles.photos_scroll} photos_scroll`}>
 				 <Container containerSize="anim-photos-scroll s_container_npd">
 						<Gallery params={{getCaptionFromTitleOrAlt: false, addClass: "no-margin"}}>
 							 <SimpleBar classNames={{track: 'simplebar-track simplebar-horizontal photos_simple'}}

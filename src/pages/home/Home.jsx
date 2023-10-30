@@ -1,4 +1,4 @@
-import React, {useRef} from "react";
+import React from "react";
 import Header from '@src/components/header/Header'
 import Hero from '@src/pages/home/Hero/Hero'
 import GalleryFour from '@src/pages/home/GalleryFour/GalleryFour'
@@ -11,41 +11,21 @@ import Availability from "@src/pages/home/Availability/Availability.jsx";
 import Team from "@src/pages/home/Team/Team.jsx";
 import PhotosScroll from "@src/pages/home/PhotosScroll/PhotosScroll.jsx";
 import Footer from "@src/components/footer/Footer.jsx";
-// import {ScrollSmoother} from "gsap/ScrollSmoother";
-
-// gsap.registerPlugin(ScrollSmoother);
 
 const Home = () => {
 	 
-	 const homeRef = useRef();
-	 // const smoother = useRef();
-	 
-	 // const scrollTo = () => {
-	 //     smoother.current.scrollTo('.box-c', true, 'center center');
-	 // };
-	 
-	 // useLayoutEffect(() => {
-	 //     const ctx = gsap.context(() => {
-	 //         smoother.current = ScrollSmoother.create({
-	 //             smooth: 2,
-	 //             effects: true,
-	 //         });
-	 //     }, homeRef);
-	 //     return () => ctx.revert();
-	 // }, []);
-	 
 	 return (
-			<div ref={homeRef} className={styles.wrapper}>
+			<div className={styles.wrapper}>
 				 <Header/>
 				 <div className={styles.page}>
-						<Hero/>
+						<Hero id='top'/>
 						<GalleryFour data={galleryData}/>
-						<About/>
-						<ProjectsSort/>
-						<Experience/>
+						<About id="section0"/>
+						<ProjectsSort id="section1"/>
+						<Experience id="section2"/>
 						<Availability/>
 						<Team/>
-						<PhotosScroll/>
+						<PhotosScroll id="section3"/>
 						<Footer/>
 				 </div>
 			</div>

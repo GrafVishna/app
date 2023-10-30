@@ -14,7 +14,7 @@ import {animation} from './HeroAnim.js'
 import Line from "@src/components/media/Line/Line.jsx";
 
 
-const Hero = () => {
+const Hero = ({id}) => {
 	 const [data, setData] = useState([]);
 	 useEffect(() => {
 			const fetchData = async () => {
@@ -37,7 +37,7 @@ const Hero = () => {
 	 });
 	 
 	 return (
-			<div ref={heroRef} className={styles.hero}>
+			<div id={id && id} ref={heroRef} className={styles.hero}>
 				 <Container containerSize="s-container-big relative anim-hero">
 						<div data-anim="hero" className={styles.hero_grid}>
 							 <div className={styles.hero_content}>

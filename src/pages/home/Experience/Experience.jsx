@@ -9,7 +9,7 @@ import {getDataApi} from "@data/getDataApi.js";
 import {gsap} from "gsap";
 import {animation} from './ExperienceAnim.js'
 
-export const Experience = () => {
+export const Experience = ({id}) => {
 	 
 	 const [data, setData] = useState([]);
 	 const [dataContent, setDataContent] = useState([]);
@@ -37,7 +37,7 @@ export const Experience = () => {
 	 });
 	 
 	 return (
-			<div ref={experienceRef} className={` ${styles.experience}`}>
+			<div id={id && id} ref={experienceRef} className={` ${styles.experience}`}>
 				 
 				 <div className='anim-experience'>
 						<Container containerSize='s-container'>

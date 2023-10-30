@@ -2,7 +2,6 @@ import {useEffect, useRef} from "react";
 import {SwiperSlide} from 'swiper/react'
 
 import 'lightgallery/css/lightgallery.css';
-import PropTypes from 'prop-types'
 import Container from '@src/components/containers/Container.jsx'
 import GalleryCard from '@src/components/media/GalleryCard/GalleryCard.jsx'
 import Label from '@src/components/text/Label/Label.jsx'
@@ -27,7 +26,7 @@ const GalleryFour = (props) => {
 	 });
 	 
 	 return (
-			<div ref={galleryRef} className={`gallery-four ${styles.gallery}`}>
+			<div id={props.id && props.id} ref={galleryRef} className={`gallery-four ${styles.gallery}`}>
 				 <Container containerSize='s-container'>
 						
 						<div>
@@ -57,10 +56,5 @@ const GalleryFour = (props) => {
 			</div>
 	 )
 }
-
-GalleryFour.propTypes = {
-	 data: PropTypes.array
-}
-
 export default GalleryFour;
 

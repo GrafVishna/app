@@ -12,7 +12,7 @@ import {animation} from './ProjectsSortAnim.js'
 import {gsap} from "gsap";
 import {AiOutlineSearch} from "react-icons/ai";
 
-const ProjectsSort = () => {
+const ProjectsSort = ({id}) => {
 	 const [data, setData] = useState([]);
 	 const projectsRef = useRef()
 	 
@@ -60,7 +60,7 @@ const ProjectsSort = () => {
 	 ]
 	 
 	 return (
-			<div ref={projectsRef} className={styles.projects}>
+			<div id={id} ref={projectsRef} className={styles.projects}>
 				 <Container containerSize='s-container'>
 						<div className={styles.projects__header}>
 							 <div className={`${styles.projects__info} anim-projects-header`}>

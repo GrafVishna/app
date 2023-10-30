@@ -10,7 +10,7 @@ import Statistics from '@src/components/text/Statistics/Statistics.jsx'
 import {gsap} from "gsap";
 import {animation} from "./AboutAnim.js";
 
-const About = () => {
+const About = ({id}) => {
 	 
 	 const [data, setData] = useState([])
 	 
@@ -36,7 +36,7 @@ const About = () => {
 	 });
 	 
 	 return (
-			<div ref={aboutRef} className={styles.about}>
+			<div id={id && id} ref={aboutRef} className={styles.about}>
 				 <Container containerSize="s-container relative anim-about">
 						<div className={styles.about_grid}>
 							 <div className={styles.text}>
