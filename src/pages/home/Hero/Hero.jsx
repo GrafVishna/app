@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef, useLayoutEffect} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {getDataApi} from '@data/getDataApi.js';
 import {gsap} from "gsap";
 import styles from './Hero.module.scss';
@@ -15,52 +15,52 @@ import Line from "@src/components/media/Line/Line.jsx";
 
 
 const Hero = () => {
-    const [data, setData] = useState([]);
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const data = await getDataApi.getAll('hero');
-                setData(data[0]);
-            } catch (error) {
-                console.error('Error fetching data:', error);
-            }
-        };
-        fetchData();
-    }, []);
-
-    const heroRef = useRef()
-    useLayoutEffect(() => {
-        let mm = gsap.matchMedia();
-        animation(mm, heroRef)
-
-        return () => mm.revert();
-    });
-
-    return (
-        <div ref={heroRef} className={styles.hero}>
-            <Container containerSize="s-container-big relative anim-hero">
-                <div data-anim="hero" className={styles.hero_grid}>
-                    <div className={styles.hero_content}>
-                        <div className={styles.stars}>
-                            <Star/>
-                            <Star/>
-                        </div>
-                        <Label className="anim-hero-label" content={data.label}/>
-                        <HeroTitle className="anim-hero-title" content={data.title}/>
-                        <Subtitle className="anim-hero-subtitle" content={data.subtitle}/>
-                        <ButtonBorder className="anim-hero-button" text={data.button_text} type={data.button_type}/>
-                    </div>
-                    <div className={styles.hero_img}>
-                        <Image src={data.image} className={`${styles.image_size} anim-hero-image`}/>
-                    </div>
-                    <DecorText className='decor-text-hero' content="Interior"/>
-                    <span className={styles.decor_line}>
+	 const [data, setData] = useState([]);
+	 useEffect(() => {
+			const fetchData = async () => {
+				 try {
+						const data = await getDataApi.getAll('hero');
+						setData(data[0]);
+				 } catch (error) {
+						console.error('Error fetching data:', error);
+				 }
+			};
+			fetchData();
+	 }, []);
+	 
+	 const heroRef = useRef()
+	 useEffect(() => {
+			let mm = gsap.matchMedia();
+			animation(mm, heroRef)
+			
+			return () => mm.revert();
+	 });
+	 
+	 return (
+			<div ref={heroRef} className={styles.hero}>
+				 <Container containerSize="s-container-big relative anim-hero">
+						<div data-anim="hero" className={styles.hero_grid}>
+							 <div className={styles.hero_content}>
+									<div className={styles.stars}>
+										 <Star/>
+										 <Star/>
+									</div>
+									<Label className="anim-hero-label" content={data.label}/>
+									<HeroTitle className="anim-hero-title" content={data.title}/>
+									<Subtitle className="anim-hero-subtitle" content={data.subtitle}/>
+									<ButtonBorder className="anim-hero-button" text={data.button_text} type={data.button_type}/>
+							 </div>
+							 <div className={styles.hero_img}>
+									<Image src={data.image} className={`${styles.image_size} anim-hero-image`}/>
+							 </div>
+							 <DecorText className='decor-text-hero' content="Interior"/>
+							 <span className={styles.decor_line}>
                         <Line/>
                     </span>
-                </div>
-            </Container>
-        </div>
-    );
+						</div>
+				 </Container>
+			</div>
+	 );
 };
 
 export default Hero;

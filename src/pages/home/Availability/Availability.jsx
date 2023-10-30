@@ -2,7 +2,7 @@ import Container from "@src/components/containers/Container.jsx";
 import styles from "./Availability.module.scss"
 import Label from "@src/components/text/Label/Label.jsx";
 import TitleSection from "@src/components/text/TitleSection/TitleSection.jsx";
-import React, {useLayoutEffect, useRef} from "react";
+import React, {useEffect, useRef} from "react";
 import SubtitleLine from "@src/components/text/SubtitleLine/SubtitleLine.jsx";
 import Table from "@src/components/Table/Table.jsx";
 import Image from "@src/components/media/Image/Image.jsx";
@@ -16,7 +16,7 @@ const Availability = () => {
 	 const subtitle = "The unique architect with ideas from outside the world. Where design and science meet. With people’s comfort in mind"
 	 
 	 const availability = useRef()
-	 useLayoutEffect(() => {
+	 useEffect(() => {
 			let mm = gsap.matchMedia();
 			animation(mm, availability)
 			
@@ -27,7 +27,7 @@ const Availability = () => {
 			<div ref={availability} className={styles.availability}>
 				 <Container containerSize='animation-availability s-container'>
 						<div className={styles.header}>
-							 <div className={styles.header__main}>
+							 <div className={`animation-availability-header ${styles.header__main}`}>
 									<Label className='animation-availability-label' content={label}/>
 									<TitleSection className='animation-availability-title' content={title}/>
 							 </div>

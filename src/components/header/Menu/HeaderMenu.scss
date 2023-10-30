@@ -1,6 +1,18 @@
 .menu {
   @include adaptiveValue("padding-left", 170, 30, 0, 1700, 991);
   flex: 1 1 auto;
+  @media (max-width: $mobile) {
+    overflow: hidden;
+  }
+
+  &__wrapper {
+    overflow: hidden;
+    @media (max-width: $mobile) {
+      padding: toRem(50) 0;
+      overflow: auto;
+      height: 100%;
+    }
+  }
 
   ul {
     display: flex;
@@ -15,7 +27,7 @@
     left: 0;
     width: 100%;
     height: 100vh;
-    padding: toRem(130) toRem(20) toRem(100) toRem(20);
+    padding: toRem(64) toRem(0) toRem(0) toRem(20);
     background-color: rgba($bgColor, $alpha9);
     backdrop-filter: blur(10px);
 

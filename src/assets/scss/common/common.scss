@@ -137,6 +137,15 @@ body {
   right: toRem(15) !important;
 }
 
+.lg-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+
 .lg-backdrop.in {
   background-color: rgba(0, 0, 0, 0.42);
   backdrop-filter: blur(15px) !important;

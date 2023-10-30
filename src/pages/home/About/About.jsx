@@ -1,4 +1,4 @@
-import React, {useEffect, useLayoutEffect, useRef, useState} from 'react'
+import React, {useEffect, useRef, useState} from 'react'
 import {getDataApi} from '@data/getDataApi.js'
 import styles from './About.module.scss'
 import Container from '@src/components/containers/Container.jsx'
@@ -28,7 +28,7 @@ const About = () => {
 	 }, [])
 	 
 	 const aboutRef = useRef()
-	 useLayoutEffect(() => {
+	 useEffect(() => {
 			let mm = gsap.matchMedia();
 			animation(mm, aboutRef)
 			

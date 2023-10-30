@@ -2,7 +2,7 @@ import styles from './Experience.module.scss'
 import Container from "@src/components/containers/Container.jsx";
 import Plan from "@src/components/media/Plan/Plan.jsx";
 import TitleSection from "@src/components/text/TitleSection/TitleSection.jsx";
-import React, {useEffect, useLayoutEffect, useRef, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import ButtonBorder from "@src/components/buttons/ButtonBorder.jsx";
 import Grades from "@src/components/Grades/Grades.jsx";
 import {getDataApi} from "@data/getDataApi.js";
@@ -29,7 +29,7 @@ export const Experience = () => {
 	 }, []);
 	 
 	 const experienceRef = useRef()
-	 useLayoutEffect(() => {
+	 useEffect(() => {
 			let mm = gsap.matchMedia();
 			animation(mm, experienceRef)
 			
@@ -45,7 +45,7 @@ export const Experience = () => {
 									<div className={`anim-experience-image ${styles.experience__image}`}>
 										 <Plan/>
 									</div>
-									<div className={styles.experience__content}>
+									<div className={`anim-experience-content ${styles.experience__content}`}>
 										 <div>
 												<TitleSection className='anim-experience-title' content={dataContent.title}/>
 												<Grades

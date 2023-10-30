@@ -1,4 +1,4 @@
-import {useLayoutEffect, useRef} from "react";
+import {useEffect, useRef} from "react";
 import {SwiperSlide} from 'swiper/react'
 
 import 'lightgallery/css/lightgallery.css';
@@ -17,49 +17,49 @@ import 'swiper/scss'
 import {gsap} from 'gsap';
 
 const GalleryFour = (props) => {
-    const galleryRef = useRef()
-    useLayoutEffect(() => {
-        let mm = gsap.matchMedia();
-        // Anim Function
-        animation(mm, galleryRef)
-        //   *****   //
-        return () => mm.revert();
-    });
-
-    return (
-        <div ref={galleryRef} className={`gallery-four ${styles.gallery}`}>
-            <Container containerSize='s-container'>
-
-                <div>
-                    <div
-                        className={`${styles.gallery_header} anim-cards-header`}>
-                        <Label content="TOP SERVICES"/>
-                        <TitleSection content="Our Specializations"/>
-                    </div>
-
-                    <div className={styles.gallery_slider}>
-                        <Gallery params={{addClass: "gallery-margin"}}>
-                            <GalleryFourSlider className={styles.gallery_wrapper}>
-                                {props.data.map((element, index) => (
-                                    <SwiperSlide
-                                        key={index}
-                                        className={`
+	 const galleryRef = useRef()
+	 useEffect(() => {
+			let mm = gsap.matchMedia();
+			// Anim Function
+			animation(mm, galleryRef)
+			//   *****   //
+			return () => mm.revert();
+	 });
+	 
+	 return (
+			<div ref={galleryRef} className={`gallery-four ${styles.gallery}`}>
+				 <Container containerSize='s-container'>
+						
+						<div>
+							 <div
+									className={`${styles.gallery_header} anim-cards-header`}>
+									<Label content="TOP SERVICES"/>
+									<TitleSection content="Our Specializations"/>
+							 </div>
+							 
+							 <div className={styles.gallery_slider}>
+									<Gallery params={{addClass: "gallery-margin"}}>
+										 <GalleryFourSlider className={styles.gallery_wrapper}>
+												{props.data.map((element, index) => (
+													 <SwiperSlide
+															key={index}
+															className={`
                                             ${styles.gallery_slide} 
                                             ${index === 0 || index === props.data.length - 1 ? "anim-cards" : 'anim-cards-center'}`}>
-                                        <GalleryCard elementData={element}/>
-                                    </SwiperSlide>
-                                ))}
-                            </GalleryFourSlider>
-                        </Gallery>
-                    </div>
-                </div>
-            </Container>
-        </div>
-    )
+															<GalleryCard elementData={element}/>
+													 </SwiperSlide>
+												))}
+										 </GalleryFourSlider>
+									</Gallery>
+							 </div>
+						</div>
+				 </Container>
+			</div>
+	 )
 }
 
 GalleryFour.propTypes = {
-    data: PropTypes.array
+	 data: PropTypes.array
 }
 
 export default GalleryFour;
